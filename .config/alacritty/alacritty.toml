@@ -1,0 +1,53 @@
+
+[env]
+TERM = "xterm-256color"
+decorations = "None"
+
+[window]
+dynamic_title = true
+padding = { x = 3, y = 3 }
+
+[scrolling]
+history = 50000
+multiplier = 10
+
+[font]
+size = 9
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+blink_interval = 500
+blink_timeout = 0
+unfocused_hollow = false
+
+[font.normal]
+family = "Fira Code"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "PageUp"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "PageDown"
+mods = "Shift"
+
+[general]
+import = ["~/.config/alacritty/alacritty-theme/themes/github_light.toml"]
