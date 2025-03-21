@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+[ $(hostname) == "zen" ] || exit 0
+mem_used=$(free -g | ned -Lg1 'Mem:\s+\d+\s+(\d+)')
+swap_used=$(free -g | ned -Lg1 'Swap:\s+\d+\s+(\d+)')
+memory 家 "$mem_used" "$swap_used" 12 8

@@ -1,0 +1,4 @@
+#!/bin/sh
+export NED_DEFAULTS='--color=never'
+dirty=$(ned -FLg 1 'Dirty:\s*( [0-9]+\s+.B)' /proc/meminfo | ned 'kB' -r 'キロ')
+echo "ダーティ $dirty"

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+reset
+ned -R \
+	--exclude "*.html" \
+	--exclude "*.log" \
+	--exclude "generated*.json" \
+	--exclude admin.js \
+	--exclude tampermonkeyexport.txt \
+	--exclude yarn.lock \
+	--exclude tour.asciinema.json \
+	--exclude-dir .cargo \
+	--exclude-dir .git \
+	--exclude-dir artifacts \
+	--exclude-dir build \
+	--exclude-dir cache \
+	--exclude-dir dist \
+	--exclude-dir jumbo-js-dependencies \
+	--exclude-dir logs \
+	--exclude-dir node_modules \
+	--exclude-dir target \
+	--exclude-dir testing/behat \
+	--exclude-dir vendor \
+	"$@" .

@@ -1,0 +1,83 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+separator_block_width=15
+markup=pango
+
+[vpn]
+command=~/.bin/vpn
+interval=1
+color=#000000
+separator=true
+
+[net]
+command=~/.bin/txrx
+interval=1
+color=#000000
+separator=true
+
+[dirty]
+command=~/.bin/dirty
+interval=1
+color=#000000
+separator=true
+
+[memory_home]
+command=~/.bin/memory_home
+interval=1
+color=#000000
+separator=true
+
+[disk_home]
+command=~/.bin/disk_home
+interval=60
+color=#000000
+separator=true
+
+[memory_work]
+command=~/.bin/memory_work
+interval=1
+color=#000000
+separator=true
+
+[disk_work]
+command=~/.bin/disk_work
+interval=60
+color=#000000
+separator=true
+
+# [input]
+# command=~/.bin/input
+# interval=1
+# color=#000000
+# separator=true
+
+[battery]
+command=~/.bin/battery
+interval=60
+color=#000000
+separator=true
+
+[time]
+command=~/.bin/日付
+interval=1
+color=#000000

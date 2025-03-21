@@ -1,0 +1,7 @@
+#!/bin/sh
+export NED_DEFAULTS='--colors=never'
+upower -i $(upower -e | grep 'BAT') | \
+    ned -ws --case-replacements '.*state:\s+([^\n]+).*?percentage:\s+([^\n+]+).*' -r '\F$1\E $2\n' --stdout | \
+    ned '(Discharging [12]?\d%)' -r "<span foreground='#ffffff' background='#ff0000'><b> \$1  </b></span>" --stdout | \
+    ned 'Charging ' -r 'バッテリー充電　' | \
+    ned 'Discharging ' -r 'バッテリー放電　' || exit 0

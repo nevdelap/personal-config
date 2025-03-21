@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+mem_used=$(
+    ssh nevd@nevd.staff.lan -C free -g |
+    iconv -c -t ASCII |
+    ned -Lg1 'Mem:\s+\d+\s+(\d+)'
+)
+swap_used=$(
+    ssh nevd@nevd.staff.lan -C free -g |
+    iconv -c -t ASCII |
+    ned -Lg1 'Swap:\s+\d+\s+(\d+)'
+)
+memory 仕事 "$mem_used" "$swap_used" 24 8

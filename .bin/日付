@@ -1,0 +1,3 @@
+#!/bin/sh
+export LC_TIME="ja_JP.UTF-8"
+echo "$(date '+%a %b')$(date '+%d日') $(date '+%H時%M分%S秒  ')"

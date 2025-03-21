@@ -1,0 +1,9 @@
+#!/bin/sh
+[ $(hostname) == "zen" ] || exit 0
+export LANG=en_AU.UTF-8
+oldtx=$(cat /sys/class/net/wlp*/statistics/tx_bytes)
+oldrx=$(cat /sys/class/net/wlp*/statistics/rx_bytes)
+sleep 1
+nowtx=$(cat /sys/class/net/wlp*/statistics/tx_bytes)
+nowrx=$(cat /sys/class/net/wlp*/statistics/rx_bytes)
+printf "送信/受信　%d/%d キロ/秒\n" $(echo "scale=0; ($nowtx - $oldtx) / 1024" | bc) $(echo "scale=0; ($nowrx - $oldrx) / 1024" | bc)

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+[ $(hostname) == "zen" ] || exit 0
+if ping -c 1 -W 5 gerrit.dev.benon.com > /dev/null; then
+	echo "ヴィーピーエヌ <span foreground='#008800'> <b>良い</b></span>"
+else
+	echo "ヴィーピーエヌ　<span foreground='#ffffff' background='#ff0000'><b>　うんこ　</b></span>"
+fi
+exit 0

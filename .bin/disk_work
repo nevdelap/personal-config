@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+root=$(ssh nevd@nevd.staff.lan -C df -h |
+    iconv -c -t ASCII |
+    ned --color=never -Lg 1 '\s(\d+)G\s+\d+%\s/$')
+msg="仕事　/　${root} ギガ"
+if [ "$root" -lt 25 ]; then
+	echo "<span foreground='#ffffff' background='#ff0000'><b> $msg! </b></span>"
+else
+	echo $msg
+fi
