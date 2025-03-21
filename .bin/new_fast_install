@@ -1,0 +1,9 @@
+System:
+  mc - edit config
+  nrs - rebuild and switch
+User:
+  ned:
+    rustup default stable
+    Clone ned repo.
+    cd ned
+    cargo build --release
