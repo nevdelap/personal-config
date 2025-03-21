@@ -4,4 +4,4 @@ if [ $# != 1 ]; then
 	exit 1
 fi
 cp "$HOME/machine-config/.bin/$1" "$HOME/.bin/$1"
-ned '#!/bin/bash' -r '$!/usr/bin/env bash' "$HOME/.bin/$1"
+ned '#!/bin/bash' -r '#!/usr/bin/env bash' "$HOME/.bin/$1"
