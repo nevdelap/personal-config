@@ -1,0 +1,4 @@
+#!/bin/sh
+# Start Chrome
+killall chrome
+nice -n 10 google-chrome-stable

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Start Brave
+killall brave
+nice -n 10 brave
