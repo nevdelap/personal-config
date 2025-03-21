@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git log --graph --pretty=format:"%Cgreen%h %C(yellow)[%cd]%Cred%d %Creset%s%Cblue [%an]" --decorate --date=local --color=always

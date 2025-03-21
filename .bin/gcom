@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if git branch -a | grep -q 'origin/main'; then
+    m="main"
+else
+    m="master"
+fi
+git checkout "origin/$m" "$@"
