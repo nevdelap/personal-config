@@ -17,12 +17,12 @@
 , libsecret
 , xorg
 , ripgrep
-, AppKit
-, Cocoa
-, CoreServices
-, Security
-, cctools
-, xcbuild
+# , AppKit
+# , Cocoa
+# , CoreServices
+# , Security
+# , cctools
+# , xcbuild
 , quilt
 , nixosTests
 }:
@@ -71,18 +71,18 @@ let
   # To compute the commit when upgrading this derivation, do:
   # `$ git rev-parse <git-rev>` where <git-rev> is the git revision of the `src`
   # Example: `$ git rev-parse v4.16.1`
-  commit = "1962f48b7f71772dc2c060dbaa5a6b4c0792a549";
+  commit = "e2c489dd00f163b1a8d959965b0c30c1a978a080";
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "code-server";
-  version = "4.91.1";
+  version = "4.98.2";
 
   src = fetchFromGitHub {
     owner = "coder";
     repo = "code-server";
     rev = "v${finalAttrs.version}";
     fetchSubmodules = true;
-    hash = "sha256-w0+lg/DcxKLrAz6DQGQ9+yPn42LrQ95Yn16IKNfqPvE=";
+    hash = "sha256-8x43w1wG/VYNUdO37oSupbQg6VY0RUaJDDw+4ZfLqyU=";
   };
 
   yarnCache = stdenv.mkDerivation {
@@ -114,7 +114,7 @@ stdenv.mkDerivation (finalAttrs: {
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-LCmygPid6VJqR1PCOMk/Hc6bo4nwsLwYr7O1p3FQVvQ=";
+    outputHash = "sha256-3xDinhLSZJoz7N7Z/+ttDLh82fwyunOTeSE3ULOZcHA=";
   };
 
   nativeBuildInputs = [
@@ -135,13 +135,13 @@ stdenv.mkDerivation (finalAttrs: {
     xorg.libxkbfile
   ] ++ lib.optionals (!stdenv.isDarwin) [
     libsecret
-  ] ++ lib.optionals stdenv.isDarwin [
-    AppKit
-    Cocoa
-    CoreServices
-    Security
-    cctools
-    xcbuild
+  # ] ++ lib.optionals stdenv.isDarwin [
+  #   AppKit
+  #   Cocoa
+  #   CoreServices
+  #   Security
+  #   cctools
+  #   xcbuild
   ];
 
   patches = [
@@ -188,7 +188,7 @@ stdenv.mkDerivation (finalAttrs: {
 
     # use updated node-gyp. fixes the following error on Darwin:
     # PermissionError: [Errno 1] Operation not permitted: '/usr/sbin/pkgutil'
-    export npm_config_node_gyp=${node-gyp}/lib/node_modules/node-gyp/bin/node-gyp.js
+    # export npm_config_node_gyp=${node-gyp}/lib/node_modules/node-gyp/bin/node-gyp.js
 
     runHook postConfigure
   '';
@@ -246,15 +246,15 @@ stdenv.mkDerivation (finalAttrs: {
         xargs -I {} sh -c 'jq -e ".scripts.postinstall" {}/package.json >/dev/null && yarn --cwd {} postinstall --frozen-lockfile --offline || true'
     patchShebangs .
 
-  '' + lib.optionalString stdenv.isDarwin ''
-    # Use prebuilt binary for @parcel/watcher, which requires macOS SDK 10.13+
-    # (see issue #101229).
-    pushd ./lib/vscode/remote/node_modules/@parcel/watcher
-    mkdir -p ./build/Release
-    mv ./prebuilds/darwin-x64/node.napi.glibc.node ./build/Release/watcher.node
-    jq "del(.scripts) | .gypfile = false" ./package.json | sponge ./package.json
-    popd
-  '' + ''
+  # '' + lib.optionalString stdenv.isDarwin ''
+  #   # Use prebuilt binary for @parcel/watcher, which requires macOS SDK 10.13+
+  #   # (see issue #101229).
+  #   pushd ./lib/vscode/remote/node_modules/@parcel/watcher
+  #   mkdir -p ./build/Release
+  #   mv ./prebuilds/darwin-x64/node.napi.glibc.node ./build/Release/watcher.node
+  #   jq "del(.scripts) | .gypfile = false" ./package.json | sponge ./package.json
+  #   popd
+  # '' + ''
 
     # Build binary packages (argon2, node-pty, etc).
     npm rebuild --offline
@@ -320,7 +320,7 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://github.com/coder/code-server";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ offline henkery code-asher ];
-    platforms = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ];
+    platforms = [ "x86_64-linux" "aarch64-linux" ]; # "x86_64-darwin" ];
     mainProgram = "code-server";
   };
 })
