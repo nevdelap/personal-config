@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Start VPN
+# Starting the VPN with Network Manager, if it is restarted because
+# the server side craps out, it doesn't restart with CAP_NET_ADMIN,
+# because of a bug reported in the Fedora forums years ago.
+# Use internet or modem for DNS and add work stuff to /etc/hosts,
+# rather than using the work DNS so that things work with and without
+# the VPN being connected.
+
+if pgrep 'openvpn\b' 2>&1 >/dev/null; then
+    killall openvpn
+fi
+mkdir -p .log
+if ! getcap $(which openvpn) | grep -q cap_net_admin; then
+    sudo setcap 'cap_net_admin+ep' /usr/bin/openvpn
+fi
+# ovpn_file='quarantine.benon.com-nevd.ovpn'
+ovpn_file='ho-vpn.benon.com-nevd.ovpn'
+openvpn \
+    --config "$HOME/.bin/$ovpn_file" \
+    --auth-user-pass "$HOME/.ssh/openvpn.txt" \
+    --ping-restart 30 \
+    --mute-replay-warnings
