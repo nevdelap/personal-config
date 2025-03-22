@@ -1,3 +1,8 @@
+NixOS:
+  https://wiki.nixos.org/wiki/NixOS_Wiki
+  https://search.nixos.org/packages
+  https://search.nixos.org/options
+  https://discourse.nixos.org/
 System:
   git clone git@github.com:nevdelap/nixos-config.git
   cdc - cd to config.
