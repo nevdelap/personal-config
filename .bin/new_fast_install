@@ -1,11 +1,10 @@
 System:
-  mc - edit config
-  nrs - rebuild and switch
-  code-server
-    Get the version, run this to get the hash...
-    nix-prefetch-git https://github.com/coder/code-server.git --rev v4.98.2 --fetch-submodules
-    Run this... then update the outputHash.
-    nix-build -E 'with import <nixpkgs> {}; with pkgs.python3Packages; callPackage ./default.nix { jq = pkgs.jq; }'
+  git clone git@github.com:nevdelap/nixos-config.git
+  cdc - cd to config.
+  mc - edit config.
+  nrs - rebuild and switch.
+Root & User:
+  git clone git@github.com:nevdelap/personal-config.git
 User:
   ned:
     rustup default stable
