@@ -1,0 +1,9 @@
+{
+    "autoclose": false,
+    "clipboard": "terminal",
+    "colorcolumn": 71,
+    "colorscheme": "bubblegum",
+    "keymenu": true,
+    "savecursor": true,
+    "tabstospaces": true
+}

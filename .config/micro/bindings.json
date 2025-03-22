@@ -1,0 +1,7 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "CtrlUnderscore": "lua:comment.comment",
+    "Ctrl-Shift-Up": "SpawnMultiCursorUp",
+    "Ctrl-Shift-Down": "SpawnMultiCursorDown",
+    "Ctrl-l": "SpawnMultiCursor",
+}
