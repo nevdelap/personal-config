@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [[ "$(hostname)" == "nevsmachine" ]]; then
+	remote_host='nevdelap.com'
+	port=8765
+else
+	remote_host='nevd.staff.lan'
+	port=22
+fi
+export AUTOSSH_FIRST_POLL=2
+export AUTOSSH_POLL=2
+# autossh -M 0 -o "ServerAliveInterval 5" -o "ServerAliveCountMax 3" -t -oPort="$port" nevd@"$remote_host"
+ssh nevd@"$remote_host"
