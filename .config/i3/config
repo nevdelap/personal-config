@@ -37,21 +37,21 @@ bindsym $mod+Shift+e                                        mode "$mode_system"
 bindsym $mod+e                                              exec --no-startup-id smile
 bindsym $mod+f                                              fullscreen toggle
 bindsym $mod+Shift+f                                        exec --no-startup-id pcmanfm
-bindsym $mod+g                                              exec --no-startup-id /home/nevd/.bin/toggler
+bindsym $mod+g                                              exec --no-startup-id "$HOME/.bin/toggler"
 bindsym $mod+q                                              kill
 bindsym $mod+Shift+r                                        restart
 bindsym $mod+space                                          floating toggle
 bindsym $mod+Shift+w                                        sticky toggle
-bindsym $mod+x                                              exec --no-startup-id /home/nevd/.bin/walllock
+bindsym $mod+x                                              exec --no-startup-id "$HOME/.bin/walllock"
 bindsym $mod+z                                              exec --no-startup-id WINIT_X11_SCALE_FACTOR=1 alacritty
 
 # Applications
 bindsym $mod+p                                              exec dmenu_run -b -nf "#000000" -nb "#ffffff" -sb "#00aa00" -sf "#ffffff" -fn "Fira Regular-9" -p " "
 bindsym $mod+Shift+p                                        exec --no-startup-id pavucontrol
 bindsym Print                                               exec --no-startup-id flameshot gui -d 2000
-bindsym Shift+F1                                            workspace $ws1; exec --no-startup-id /home/nevd/.bin/sc
+bindsym Shift+F1                                            workspace $ws1; exec --no-startup-id "$HOME/.bin/sc"
 bindsym Shift+F2                                            workspace $ws2; exec --no-startup-id slack
-bindsym Shift+F4                                            workspace $ws4; exec --no-startup-id /home/nevd/.bin/sb
+bindsym Shift+F4                                            workspace $ws4; exec --no-startup-id "$HOME/.bin/sb"
 bindsym Shift+F7                                            workspace $ws7; exec --no-startup-id android-studio
 
 # Autostart applications.

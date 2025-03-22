@@ -1,4 +1,8 @@
 #!/bin/sh
 # Start Brave
 killall brave
-nice -n 10 brave
+if [ "$(whoami)" == "root" ]; then
+    nice -n 10 brave --no-sandbox
+else
+    nice -n 10 brave
+fi
