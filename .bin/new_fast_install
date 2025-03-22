@@ -12,3 +12,46 @@ User:
     Clone ned repo.
     cd ned
     cargo build --release
+  VS Code extensions:
+    charliermarsh.ruff
+    davidanson.vscode-markdownlint
+    editorconfig.editorconfig
+    emeraldwalk.runonsave
+    github.copilot
+    github.copilot-chat
+    github.github-vscode-theme
+    innoverio.vscode-dbt-power-user
+    jnoortheen.nix-ide
+    lelinpadhan.retro-green-theme-vscode
+    mkhl.shfmt
+    ms-ceintl.vscode-language-pack-ja
+    ms-python.debugpy
+    ms-python.isort
+    ms-python.mypy-type-checker
+    ms-python.pylint
+    ms-python.python
+    ms-toolsai.jupyter
+    ms-toolsai.jupyter-keymap
+    ms-toolsai.jupyter-renderers
+    ms-toolsai.vscode-jupyter-cell-tags
+    ms-toolsai.vscode-jupyter-slideshow
+    ms-vscode-remote.remote-ssh
+    ms-vscode-remote.remote-ssh-edit
+    ms-vscode.remote-explorer
+    naumovs.color-highlight
+    redhat.vscode-yaml
+    samuelcolvin.jinjahtml
+    shardulm94.trailing-spaces
+    snowflake.snowflake-vsc
+    solomonkinard.git-blame
+    stkb.rewrap
+    streetsidesoftware.code-spell-checker
+    streetsidesoftware.code-spell-checker-australian-english
+    streetsidesoftware.code-spell-checker-french
+    streetsidesoftware.code-spell-checker-spanish
+    timonwong.shellcheck
+    tyriar.sort-lines
+    uctakeoff.vscode-counter
+    usernamehw.errorlens
+    usernamehw.remove-empty-lines
+    wholroyd.jinja
