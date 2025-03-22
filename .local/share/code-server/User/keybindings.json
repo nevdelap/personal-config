@@ -1,0 +1,145 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+l",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "rewrap.rewrapComment",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+q",
+        "command": "-rewrap.rewrapComment",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "black-py.run"
+    },
+    {
+        "key": "right",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionVisible"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "snowflake.executeStatements",
+        "when": "editorTextFocus && !notebookCellListFocused && editorLangId == 'snowflake-sql'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "snowflake.executeStatements",
+        "when": "editorTextFocus && !notebookCellListFocused && editorLangId == 'snowflake-sql'"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.new",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+up",
+        "command": "-editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "editor.action.moveLinesUpAction"
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "-workbench.action.editor.changeLanguageMode",
+        "when": "!notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "editor.action.moveLinesDownAction"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && isWeb && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && isWeb && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.experimental.quickTextSearch"
+    }
+]
